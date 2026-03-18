@@ -1,12 +1,13 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
-using System;
 
 public class GameFlowManager : MonoBehaviour
 {
-    public enum GameState { Gameplay, GameOver, Victory }
+    public enum GameState { Gameplay, GameOver, Victory, Paused}
 
     public static GameFlowManager Instance { get; private set; }
 
@@ -31,6 +32,7 @@ public class GameFlowManager : MonoBehaviour
 
     [Header("UI Panels")]
     [SerializeField] private GameObject hudPanel;
+    [SerializeField] private GameObject pausePanel;
     [SerializeField] private GameObject gameOverPanel;
     [SerializeField] private GameObject victoryPanel;
 
@@ -64,6 +66,36 @@ public class GameFlowManager : MonoBehaviour
         if (cameraFollow != null) cameraFollow.SetFrozen(false);
     }
 
+    private void Update()
+    {
+        // Detectar tecla de Pausa (Esc o P) usando el nuevo Input System
+        if (Keyboard.current != null && (Keyboard.current.escapeKey.wasPressedThisFrame || Keyboard.current.pKey.wasPressedThisFrame))
+        {
+            if (currentState == GameState.Gameplay)
+                PauseGame();
+            else if (currentState == GameState.Paused)
+                ResumeGame();
+        }
+    }
+
+    public void PauseGame()
+    {
+        if (!IsGameplay) return; // No pausar si ya morimos o ganamos
+
+        SetState(GameState.Paused);
+        Time.timeScale = 0f; // Congela el motor de física y tiempo
+        ShowPanels(pause: true);
+    }
+
+    public void ResumeGame()
+    {
+        // Solo podemos reanudar si estamos en Pausa u Opciones
+        if (currentState != GameState.Paused && currentState != GameState.Gameplay) return;
+
+        SetState(GameState.Gameplay);
+        Time.timeScale = 1f; // Devuelve el tiempo a la normalidad
+        ShowPanels(gameplay: true);
+    }
     public void RequestGameOver()
     {
         if (!IsGameplay) return;
@@ -124,9 +156,10 @@ public class GameFlowManager : MonoBehaviour
         currentState = newState;
     }
 
-    private void ShowPanels(bool gameplay = false, bool gameOver = false, bool victory = false)
+    private void ShowPanels(bool gameplay = false, bool pause = false, bool gameOver = false, bool victory = false)
     {
         if (hudPanel != null) hudPanel.SetActive(gameplay);
+        if (pausePanel != null) pausePanel.SetActive(pause);
         if (gameOverPanel != null) gameOverPanel.SetActive(gameOver);
         if (victoryPanel != null) victoryPanel.SetActive(victory);
     }
@@ -140,4 +173,11 @@ public class GameFlowManager : MonoBehaviour
         Time.timeScale = 1f;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
+
+    public void BackToMenu()
+    {
+        Time.timeScale = 1f;
+        SceneManager.LoadScene(0); // Carga la escena con índice 0 (Menú)
+    }
+
 }
