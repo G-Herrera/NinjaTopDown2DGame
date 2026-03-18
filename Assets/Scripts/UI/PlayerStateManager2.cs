@@ -14,9 +14,7 @@ public class PlayerStateManager2 : MonoBehaviour
     [SerializeField] private float groundRadius = 0.2f;
     [SerializeField] private LayerMask groundLayer;
 
-
-    [SerializeField] private bool rotateForVertical = true;
-
+    // [SerializeField] private bool rotateForVertical = true;
 
     // =========================================================
     // Inspector: Animation
@@ -115,9 +113,9 @@ public class PlayerStateManager2 : MonoBehaviour
 
     private void FixedUpdate()
     {
-            rb.velocity = new Vector2(
+            rb.linearVelocity = new Vector2(
                 moveInput.x * moveSpeed,
-                rb.velocity.y
+                rb.linearVelocity.y
             );
     }
 
@@ -174,7 +172,7 @@ public class PlayerStateManager2 : MonoBehaviour
 
     private void Jump()
     {
-        rb.velocity = new Vector2(rb.velocity.x, 0f); // reset Y
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, 0f); // reset Y
         rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
     }
 

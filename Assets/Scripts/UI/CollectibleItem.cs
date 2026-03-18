@@ -29,7 +29,7 @@ public class CollectibleItem : MonoBehaviour
         alreadyCollected = true;
 
         if (goalManager == null)
-            goalManager = FindObjectOfType<CollectibleGoalManager>();
+            goalManager = Object.FindFirstObjectByType<CollectibleGoalManager>();
 
         if (goalManager != null)
             goalManager.RegisterCollectible(value);

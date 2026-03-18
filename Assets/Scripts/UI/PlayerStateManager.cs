@@ -19,16 +19,18 @@ public class PlayerStateManager : MonoBehaviour
     [Header("Health")]
     [SerializeField] private PlayerHealth playerHealth;
 
-    [Header("Orientation")]
-    [SerializeField] private float directionDeadzone = 0.01f;
-
+    /*
+     * También se usaba para la rotación vertical
+     * [Header("Orientation")]
+     * [SerializeField] private float directionDeadzone = 0.01f;
+    */
     private Rigidbody2D rb;
     private Vector2 moveInput;
 
     private static readonly int HashIsMoving = Animator.StringToHash("isMoving");
-    private static readonly int HashMoveX = Animator.StringToHash("moveX");
-    private static readonly int HashMoveY = Animator.StringToHash("moveY");
-
+    private static readonly int HashMoveX = Animator.StringToHash("MoveX");
+    private static readonly int HashMoveY = Animator.StringToHash("MoveY");
+    //
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -71,15 +73,15 @@ public class PlayerStateManager : MonoBehaviour
             moveInput = moveInput.normalized;
 
         UpdateAnimator(moveInput);
-        UpdateOrientation(moveInput);
+        // UpdateOrientation(moveInput);
     }
 
     private void FixedUpdate()
     {
-        // Si no es gameplay o estamos muertos, detener f�sico
+        // Si no es gameplay o estamos muertos, detener f�sico
         if (!GameFlowManager.Instance.IsGameplay || (playerHealth != null && playerHealth.IsDead))
         {
-            rb.velocity = Vector2.zero;
+            rb.linearVelocity = Vector2.zero;
             return;
         }
 
@@ -98,16 +100,37 @@ public class PlayerStateManager : MonoBehaviour
         rb.MovePosition(nextPos);
     }
 
+
+    /* 
+     * Actualizacion del animator 
+     * Realiza el mirror del sprite según el input horizontal 
+     * y resetea la rotacion para evitar problemas con la orientacion
+    */
+
     private void UpdateAnimator(Vector2 input)
     {
         if (animator == null) return;
 
         bool isMoving = input.sqrMagnitude > 0.0001f;
         animator.SetBool(HashIsMoving, isMoving);
-        animator.SetFloat(HashMoveX, input.x);
-        animator.SetFloat(HashMoveY, input.y);
+
+        if (isMoving)
+        {
+            animator.SetFloat(HashMoveX, input.x);
+            animator.SetFloat(HashMoveY, input.y);
+            if (spriteRenderer != null && Mathf.Abs(input.x) > 0.01f)
+            {
+                spriteRenderer.flipX = input.x < 0f;
+            }
+            if (spriteRenderer != null)
+            spriteRenderer.transform.localEulerAngles = Vector3.zero; // Resetea rotacion para evitar problemas con la orientacion
+        }
     }
 
+    /*
+
+      Comenté este método para corregir la rotación del sprite al moverse verticalmente
+    
     private void UpdateOrientation(Vector2 dir)
     {
         if (spriteRenderer == null) return;
@@ -127,6 +150,8 @@ public class PlayerStateManager : MonoBehaviour
         }
     }
 
+    */
+
     // Esto asegura que si desactivamos el script desde GameFlowManager, el jugador se detenga
     private void OnDisable()
     {
@@ -140,12 +165,12 @@ public class PlayerStateManager : MonoBehaviour
 
         if (rb != null)
         {
-            rb.velocity = Vector2.zero;
-            rb.simulated = false; // Bloquea f�sica si script desactivado
+            rb.linearVelocity = Vector2.zero;
+            rb.simulated = false; // Bloquea f�sica si script desactivado
         }
     }
 
-    // Esto vuelve a activar la f�sica si reactivamos el script
+    // Esto vuelve a activar la f�sica si reactivamos el script
     private void OnEnable()
     {
         if (rb != null)
