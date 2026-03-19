@@ -117,7 +117,7 @@ public class PlayerHealth : MonoBehaviour
     private void UpdateUI()
     {
         if (txtHP != null)
-            txtHP.text = $"HP: {currentHP}";
+            txtHP.text = $"{currentHP}";
     }
 
     // Útil si reinicias sin recargar escena (opcional)
