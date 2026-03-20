@@ -69,7 +69,7 @@ public class EnemyStateManager2D : MonoBehaviour
 
         if (txtStateDebug != null)
         {
-            txtStateDebug.text = $"Enemy State: {currentState}";
+            txtStateDebug.text = $"{currentState}";
         }
 
     }
