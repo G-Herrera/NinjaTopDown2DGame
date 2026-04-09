@@ -19,6 +19,10 @@ public class PlayerStateManager : MonoBehaviour
     [Header("Health")]
     [SerializeField] private PlayerHealth playerHealth;
 
+    [Header("Attack")]
+    [SerializeField] private GameObject ninjaStartPrefab;
+    [SerializeField] private Transform firePoint;
+
     /*
      * También se usaba para la rotación vertical
      * [Header("Orientation")]
@@ -45,6 +49,11 @@ public class PlayerStateManager : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Shoot();
+        }
+        
         // Si no estamos en gameplay o estamos muertos, no hay input
         if (!GameFlowManager.Instance.IsGameplay || (playerHealth != null && playerHealth.IsDead))
         {
@@ -175,5 +184,29 @@ public class PlayerStateManager : MonoBehaviour
     {
         if (rb != null)
             rb.simulated = true;
+    }
+
+    private void Shoot()
+    {
+        GameObject star = Instantiate(ninjaStartPrefab, firePoint.position, Quaternion.identity);
+
+        Vector2 direction = GetShootDirection();
+        NinjaStar starScript = star.GetComponent<NinjaStar>();
+
+        if (starScript != null)
+        {
+            starScript.SetDirection(direction);
+        }
+    }
+
+    private Vector2 GetShootDirection()
+    {
+        if (moveInput.sqrMagnitude > 0.01f)
+        {
+            return moveInput.normalized;
+        }
+
+        // Si no se mueve, dispara hacia donde mira (izq/der)
+        return spriteRenderer.flipX ? Vector2.left : Vector2.right;
     }
 }
