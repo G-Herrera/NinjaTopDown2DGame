@@ -1,0 +1,1640 @@
+fileFormatVersion: 2
+guid: c73fdf7628ecb574c9971c66346104c1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4246719177505182338
+    second: SkullEnemy_0
+  - first:
+      213: 8273150522903378292
+    second: SkullEnemy_1
+  - first:
+      213: 183168056035316904
+    second: SkullEnemy_2
+  - first:
+      213: 5373047303351389999
+    second: SkullEnemy_3
+  - first:
+      213: -2532331547593775201
+    second: SkullEnemy_4
+  - first:
+      213: -7097371210300685306
+    second: SkullEnemy_5
+  - first:
+      213: 8930231152375154472
+    second: SkullEnemy_6
+  - first:
+      213: 6337175771438678820
+    second: SkullEnemy_7
+  - first:
+      213: 4637201951745448469
+    second: SkullEnemy_8
+  - first:
+      213: 6442289529396362112
+    second: SkullEnemy_9
+  - first:
+      213: 4123622709970919009
+    second: SkullEnemy_10
+  - first:
+      213: 1097148552453342037
+    second: SkullEnemy_11
+  - first:
+      213: -7414301098018286562
+    second: SkullEnemy_12
+  - first:
+      213: -1258835825938371032
+    second: SkullEnemy_13
+  - first:
+      213: -6051750788505164433
+    second: SkullEnemy_14
+  - first:
+      213: 4900646128279274577
+    second: SkullEnemy_15
+  - first:
+      213: -5236467045560206073
+    second: SkullEnemy_16
+  - first:
+      213: -1389283086484697581
+    second: SkullEnemy_17
+  - first:
+      213: 514086931623961631
+    second: SkullEnemy_18
+  - first:
+      213: -3835767197868405898
+    second: SkullEnemy_19
+  - first:
+      213: -5731273954305570671
+    second: SkullEnemy_20
+  - first:
+      213: 3824034288533458121
+    second: SkullEnemy_21
+  - first:
+      213: -4172821549501026488
+    second: SkullEnemy_22
+  - first:
+      213: -1401181289127039127
+    second: SkullEnemy_23
+  - first:
+      213: 4566982804690093606
+    second: SkullEnemy_24
+  - first:
+      213: 450029124151574829
+    second: SkullEnemy_25
+  - first:
+      213: 3491387365241852772
+    second: SkullEnemy_26
+  - first:
+      213: 4463878962042710406
+    second: SkullEnemy_27
+  - first:
+      213: 2517216772117726697
+    second: SkullEnemy_28
+  - first:
+      213: -6384167927289792336
+    second: SkullEnemy_29
+  - first:
+      213: -8143151533351721960
+    second: SkullEnemy_30
+  - first:
+      213: 3262237387421554468
+    second: SkullEnemy_31
+  - first:
+      213: -7410954553508550332
+    second: SkullEnemy_32
+  - first:
+      213: -4491157057776729478
+    second: SkullEnemy_33
+  - first:
+      213: 736808404287204293
+    second: SkullEnemy_34
+  - first:
+      213: -4514953216797030347
+    second: SkullEnemy_35
+  - first:
+      213: -3515122607228551262
+    second: SkullEnemy_36
+  - first:
+      213: 441282628193835928
+    second: SkullEnemy_37
+  - first:
+      213: -801185862974514739
+    second: SkullEnemy_38
+  - first:
+      213: 6788077887658922666
+    second: SkullEnemy_39
+  - first:
+      213: 5358575833927939969
+    second: SkullEnemy_40
+  - first:
+      213: 6497019465332767604
+    second: SkullEnemy_41
+  - first:
+      213: -4867090456531314226
+    second: SkullEnemy_42
+  - first:
+      213: 8511006665743185999
+    second: SkullEnemy_43
+  - first:
+      213: -8446313335592577152
+    second: SkullEnemy_44
+  - first:
+      213: 6240443140857480364
+    second: SkullEnemy_45
+  - first:
+      213: -2520987614245201172
+    second: SkullEnemy_46
+  - first:
+      213: 1965351082649851032
+    second: SkullEnemy_47
+  - first:
+      213: -1298258742507880771
+    second: SkullEnemy_48
+  - first:
+      213: -7489323882497442404
+    second: SkullEnemy_49
+  - first:
+      213: 1837428137681730729
+    second: SkullEnemy_50
+  - first:
+      213: -8353576991365696894
+    second: SkullEnemy_51
+  - first:
+      213: 3306903013694071232
+    second: SkullEnemy_52
+  - first:
+      213: 8862863297100841373
+    second: SkullEnemy_53
+  - first:
+      213: -1921663099418297231
+    second: SkullEnemy_54
+  - first:
+      213: 7222646342148675082
+    second: SkullEnemy_55
+  - first:
+      213: 6931736960538473225
+    second: SkullEnemy_56
+  - first:
+      213: 4589623019023352026
+    second: SkullEnemy_57
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SkullEnemy_0
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 699
+        width: 149
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 282190487906fea30800000000000000
+      internalID: 4246719177505182338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullEnemy_1
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 699
+        width: 145
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4793efa419220d270800000000000000
+      internalID: 8273150522903378292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullEnemy_2
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 699
+        width: 147
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a41f22606eba8200800000000000000
+      internalID: 183168056035316904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullEnemy_3
+      rect:
+        serializedVersion: 2
+        x: 778
+        y: 699
+        width: 145
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2f41a50e06e09a40800000000000000
+      internalID: 5373047303351389999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullEnemy_4
+      rect:
+        serializedVersion: 2
+        x: 1002
+        y: 699
+        width: 147
+        height: 214
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f976824dfd95bdcd0800000000000000
+      internalID: -2532331547593775201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullEnemy_5
+      rect:
+        serializedVersion: 2
+        x: 1226
+        y: 697
+        width: 149
+        height: 216
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60481fadc72118d90800000000000000
+      internalID: -7097371210300685306
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullEnemy_6
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 385
+        width: 216
+        height: 213
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 827c27f2bed8eeb70800000000000000
+      internalID: 8930231152375154472
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullEnemy_7
+      rect:
+        serializedVersion: 2
+        x: 306
+        y: 519
+        width: 4
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 42380dfc9cb22f750800000000000000
+      internalID: 6337175771438678820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullEnemy_8
+      rect:
+        serializedVersion: 2
+        x: 312
+        y: 385
+        width: 200
+        height: 212
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51a198d2b96aa5040800000000000000
+      internalID: 4637201951745448469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullEnemy_9
+      rect:
+        serializedVersion: 2
+        x: 522
+        y: 385
+        width: 184
+        height: 212
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08b73ebb13c976950800000000000000
+      internalID: 6442289529396362112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullEnemy_10
+      rect:
+        serializedVersion: 2
+        x: 756
+        y: 385
+        width: 208
+        height: 208
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 16edc8fb10d0a3930800000000000000
+      internalID: 4123622709970919009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullEnemy_11
+      rect:
+        serializedVersion: 2
+        x: 991
+        y: 386
+        width: 219
+        height: 200
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 553c0d6abcad93f00800000000000000
+      internalID: 1097148552453342037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullEnemy_12
+      rect:
+        serializedVersion: 2
+        x: 1007
+        y: 513
+        width: 12
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e14d4da1f6c1b1990800000000000000
+      internalID: -7414301098018286562
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullEnemy_13
+      rect:
+        serializedVersion: 2
+        x: 1256
+        y: 382
+        width: 214
+        height: 141
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 82e68646c77b78ee0800000000000000
+      internalID: -1258835825938371032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullEnemy_14
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 497
+        width: 11
+        height: 21
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f65a5fda8bcd30ca0800000000000000
+      internalID: -6051750788505164433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullEnemy_15
+      rect:
+        serializedVersion: 2
+        x: 1212
+        y: 507
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 154cafd50b7920440800000000000000
+      internalID: 4900646128279274577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullEnemy_16
+      rect:
+        serializedVersion: 2
+        x: 1242
+        y: 508
+        width: 5
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 70d385f47f45457b0800000000000000
+      internalID: -5236467045560206073
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullEnemy_17
+      rect:
+        serializedVersion: 2
+        x: 987
+        y: 503
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 31e0f91c46648bce0800000000000000
+      internalID: -1389283086484697581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullEnemy_18
+      rect:
+        serializedVersion: 2
+        x: 1244
+        y: 434
+        width: 24
+        height: 69
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f14ed1f2757622700800000000000000
+      internalID: 514086931623961631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullEnemy_19
+      rect:
+        serializedVersion: 2
+        x: 995
+        y: 478
+        width: 9
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 67b45f96e0e94cac0800000000000000
+      internalID: -3835767197868405898
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullEnemy_20
+      rect:
+        serializedVersion: 2
+        x: 1010
+        y: 473
+        width: 6
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1980b2344bc6670b0800000000000000
+      internalID: -5731273954305570671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullEnemy_21
+      rect:
+        serializedVersion: 2
+        x: 1232
+        y: 468
+        width: 7
+        height: 10
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cc43f0cce2b11530800000000000000
+      internalID: 3824034288533458121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullEnemy_22
+      rect:
+        serializedVersion: 2
+        x: 727
+        y: 416
+        width: 10
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 84f65e6c8e82716c0800000000000000
+      internalID: -4172821549501026488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullEnemy_23
+      rect:
+        serializedVersion: 2
+        x: 1214
+        y: 438
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96fa8a39a010e8ce0800000000000000
+      internalID: -1401181289127039127
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullEnemy_24
+      rect:
+        serializedVersion: 2
+        x: 737
+        y: 408
+        width: 13
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 626ced8f9ae216f30800000000000000
+      internalID: 4566982804690093606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullEnemy_25
+      rect:
+        serializedVersion: 2
+        x: 984
+        y: 406
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d2182a3aa13de3600800000000000000
+      internalID: 450029124151574829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullEnemy_26
+      rect:
+        serializedVersion: 2
+        x: 1221
+        y: 411
+        width: 14
+        height: 13
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 463178e7f46e37030800000000000000
+      internalID: 3491387365241852772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullEnemy_27
+      rect:
+        serializedVersion: 2
+        x: 962
+        y: 404
+        width: 7
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 68925ece342e2fd30800000000000000
+      internalID: 4463878962042710406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullEnemy_28
+      rect:
+        serializedVersion: 2
+        x: 1007
+        y: 402
+        width: 7
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e58bb44153fee220800000000000000
+      internalID: 2517216772117726697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullEnemy_29
+      rect:
+        serializedVersion: 2
+        x: 1234
+        y: 400
+        width: 5
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b8337b4811e667a0800000000000000
+      internalID: -6384167927289792336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullEnemy_30
+      rect:
+        serializedVersion: 2
+        x: 729
+        y: 393
+        width: 32
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 814a46e13d6bdfe80800000000000000
+      internalID: -8143151533351721960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullEnemy_31
+      rect:
+        serializedVersion: 2
+        x: 980
+        y: 390
+        width: 27
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 427924aae9bc54d20800000000000000
+      internalID: 3262237387421554468
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullEnemy_32
+      rect:
+        serializedVersion: 2
+        x: 1228
+        y: 391
+        width: 24
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4492f873910072990800000000000000
+      internalID: -7410954553508550332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullEnemy_33
+      rect:
+        serializedVersion: 2
+        x: 1255
+        y: 392
+        width: 6
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a72cabc73743ca1c0800000000000000
+      internalID: -4491157057776729478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullEnemy_34
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 228
+        width: 18
+        height: 18
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cbaf05075ba93a00800000000000000
+      internalID: 736808404287204293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullEnemy_35
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 236
+        width: 8
+        height: 7
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5384e4778f9a751c0800000000000000
+      internalID: -4514953216797030347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullEnemy_36
+      rect:
+        serializedVersion: 2
+        x: 319
+        y: 242
+        width: 14
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2af7236dc96c73fc0800000000000000
+      internalID: -3515122607228551262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullEnemy_37
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 236
+        width: 10
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89b5b0b5630cf1600800000000000000
+      internalID: 441282628193835928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullEnemy_38
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 235
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc9d656d3bd91e4f0800000000000000
+      internalID: -801185862974514739
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullEnemy_39
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 217
+        width: 26
+        height: 19
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa21891cfd8143e50800000000000000
+      internalID: 6788077887658922666
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullEnemy_40
+      rect:
+        serializedVersion: 2
+        x: 592
+        y: 231
+        width: 5
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 187744b745c7d5a40800000000000000
+      internalID: 5358575833927939969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullEnemy_41
+      rect:
+        serializedVersion: 2
+        x: 611
+        y: 233
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47b35f1f7cc0a2a50800000000000000
+      internalID: 6497019465332767604
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullEnemy_42
+      rect:
+        serializedVersion: 2
+        x: 759
+        y: 219
+        width: 27
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ec9d1c8440f947cb0800000000000000
+      internalID: -4867090456531314226
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullEnemy_43
+      rect:
+        serializedVersion: 2
+        x: 923
+        y: 225
+        width: 14
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f48ba90287b2d1670800000000000000
+      internalID: 8511006665743185999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullEnemy_44
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 122
+        width: 306
+        height: 102
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0871c5295caa8ca80800000000000000
+      internalID: -8446313335592577152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullEnemy_45
+      rect:
+        serializedVersion: 2
+        x: 151
+        y: 223
+        width: 12
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ca445db29f18a9650800000000000000
+      internalID: 6240443140857480364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullEnemy_46
+      rect:
+        serializedVersion: 2
+        x: 179
+        y: 217
+        width: 12
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cea51c12f17a30dd0800000000000000
+      internalID: -2520987614245201172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullEnemy_47
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 221
+        width: 4
+        height: 5
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89416449564564b10800000000000000
+      internalID: 1965351082649851032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullEnemy_48
+      rect:
+        serializedVersion: 2
+        x: 442
+        y: 125
+        width: 285
+        height: 106
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbeb54a5d88abfde0800000000000000
+      internalID: -1298258742507880771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullEnemy_49
+      rect:
+        serializedVersion: 2
+        x: 766
+        y: 122
+        width: 308
+        height: 112
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9df3e7eb93901890800000000000000
+      internalID: -7489323882497442404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullEnemy_50
+      rect:
+        serializedVersion: 2
+        x: 91
+        y: 181
+        width: 9
+        height: 9
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9acb3d6f72bdf7910800000000000000
+      internalID: 1837428137681730729
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullEnemy_51
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 171
+        width: 17
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28275c94cf1221c80800000000000000
+      internalID: -8353576991365696894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullEnemy_52
+      rect:
+        serializedVersion: 2
+        x: 757
+        y: 185
+        width: 11
+        height: 12
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c167ed25ca74ed20800000000000000
+      internalID: 3306903013694071232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullEnemy_53
+      rect:
+        serializedVersion: 2
+        x: 1061
+        y: 179
+        width: 18
+        height: 15
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d910b8416373ffa70800000000000000
+      internalID: 8862863297100841373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullEnemy_54
+      rect:
+        serializedVersion: 2
+        x: 1113
+        y: 122
+        width: 310
+        height: 81
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 17c323da791e455e0800000000000000
+      internalID: -1921663099418297231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullEnemy_55
+      rect:
+        serializedVersion: 2
+        x: 71
+        y: 152
+        width: 15
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a06db0ab49efb3460800000000000000
+      internalID: 7222646342148675082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullEnemy_56
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 132
+        width: 14
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 90377592a0a723060800000000000000
+      internalID: 6931736960538473225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SkullEnemy_57
+      rect:
+        serializedVersion: 2
+        x: 1077
+        y: 129
+        width: 12
+        height: 6
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ad0c7d5a1dd91bf30800000000000000
+      internalID: 4589623019023352026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 240a36776d64a004bb499ed096bf39f0
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      SkullEnemy_0: 4246719177505182338
+      SkullEnemy_1: 8273150522903378292
+      SkullEnemy_10: 4123622709970919009
+      SkullEnemy_11: 1097148552453342037
+      SkullEnemy_12: -7414301098018286562
+      SkullEnemy_13: -1258835825938371032
+      SkullEnemy_14: -6051750788505164433
+      SkullEnemy_15: 4900646128279274577
+      SkullEnemy_16: -5236467045560206073
+      SkullEnemy_17: -1389283086484697581
+      SkullEnemy_18: 514086931623961631
+      SkullEnemy_19: -3835767197868405898
+      SkullEnemy_2: 183168056035316904
+      SkullEnemy_20: -5731273954305570671
+      SkullEnemy_21: 3824034288533458121
+      SkullEnemy_22: -4172821549501026488
+      SkullEnemy_23: -1401181289127039127
+      SkullEnemy_24: 4566982804690093606
+      SkullEnemy_25: 450029124151574829
+      SkullEnemy_26: 3491387365241852772
+      SkullEnemy_27: 4463878962042710406
+      SkullEnemy_28: 2517216772117726697
+      SkullEnemy_29: -6384167927289792336
+      SkullEnemy_3: 5373047303351389999
+      SkullEnemy_30: -8143151533351721960
+      SkullEnemy_31: 3262237387421554468
+      SkullEnemy_32: -7410954553508550332
+      SkullEnemy_33: -4491157057776729478
+      SkullEnemy_34: 736808404287204293
+      SkullEnemy_35: -4514953216797030347
+      SkullEnemy_36: -3515122607228551262
+      SkullEnemy_37: 441282628193835928
+      SkullEnemy_38: -801185862974514739
+      SkullEnemy_39: 6788077887658922666
+      SkullEnemy_4: -2532331547593775201
+      SkullEnemy_40: 5358575833927939969
+      SkullEnemy_41: 6497019465332767604
+      SkullEnemy_42: -4867090456531314226
+      SkullEnemy_43: 8511006665743185999
+      SkullEnemy_44: -8446313335592577152
+      SkullEnemy_45: 6240443140857480364
+      SkullEnemy_46: -2520987614245201172
+      SkullEnemy_47: 1965351082649851032
+      SkullEnemy_48: -1298258742507880771
+      SkullEnemy_49: -7489323882497442404
+      SkullEnemy_5: -7097371210300685306
+      SkullEnemy_50: 1837428137681730729
+      SkullEnemy_51: -8353576991365696894
+      SkullEnemy_52: 3306903013694071232
+      SkullEnemy_53: 8862863297100841373
+      SkullEnemy_54: -1921663099418297231
+      SkullEnemy_55: 7222646342148675082
+      SkullEnemy_56: 6931736960538473225
+      SkullEnemy_57: 4589623019023352026
+      SkullEnemy_6: 8930231152375154472
+      SkullEnemy_7: 6337175771438678820
+      SkullEnemy_8: 4637201951745448469
+      SkullEnemy_9: 6442289529396362112
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
