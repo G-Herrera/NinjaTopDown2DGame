@@ -2001,7 +2001,7 @@ MonoBehaviour:
   - {fileID: 1058860734}
   - {fileID: 1304732598}
   player: {fileID: 1888932993}
-  spawnCooldown: 1
+  spawnCooldown: 0.75
 --- !u!4 &695974722
 Transform:
   m_ObjectHideFlags: 0
@@ -2467,7 +2467,7 @@ Transform:
   m_GameObject: {fileID: 780528755}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 1, w: 0}
-  m_LocalPosition: {x: 17.779999, y: -7.87, z: 0}
+  m_LocalPosition: {x: 17.48, y: -8.13, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3426,16 +3426,16 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: -0.6793461, y: 3.076338}
-      - {x: -0.78688717, y: 0.08817652}
-      - {x: 0.14674914, y: 0.04108143}
-      - {x: 0.15935051, y: 2.5228999}
-      - {x: 1.5739685, y: 2.9763122}
-      - {x: 2.977856, y: 2.363482}
-      - {x: 2.9711566, y: 0.100473404}
-      - {x: 3.7910414, y: 0.1354003}
-      - {x: 4.135231, y: 3.0742488}
-      - {x: 1.8184845, y: 3.8570833}
+    - - {x: -0.7188511, y: 2.740546}
+      - {x: -0.74738216, y: 0.5029781}
+      - {x: 0.14674914, y: 0.53489304}
+      - {x: 0.15935051, y: 2.2858703}
+      - {x: 1.5344635, y: 2.8182926}
+      - {x: 2.8988464, y: 2.2449675}
+      - {x: 2.9909089, y: 0.5350275}
+      - {x: 3.8898034, y: 0.5699539}
+      - {x: 3.8389442, y: 2.8964763}
+      - {x: 1.4629405, y: 3.7385683}
   m_UseDelaunayMesh: 0
 --- !u!1 &949110657
 GameObject:
@@ -3891,7 +3891,7 @@ MonoBehaviour:
   - {fileID: 1585584075}
   - {fileID: 1655453228}
   txtStateDebug: {fileID: 780846085}
-  detectionRange: 8
+  detectionRange: 9
   attackRange: 0.75
   patrolSpeed: 2
   chaseSpeed: 3.5
@@ -6036,7 +6036,7 @@ MonoBehaviour:
   m_SpawnPoints:
   - {fileID: 398675715}
   - {fileID: 1556215112}
-  maxEnemies: 1
+  maxEnemies: 4
   spawnCooldown: 5
 --- !u!4 &1676174323
 Transform:

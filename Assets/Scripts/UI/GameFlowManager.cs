@@ -101,6 +101,7 @@ public class GameFlowManager : MonoBehaviour
         if (!IsGameplay) return;
         if (endRoutine != null) StopCoroutine(endRoutine);
         endRoutine = StartCoroutine(EndRoutine(GameState.GameOver, gameOverDelay));
+        Time.timeScale = 0f;
     }
 
     public void RequestVictory()
@@ -117,6 +118,7 @@ public class GameFlowManager : MonoBehaviour
 
         if (endRoutine != null) StopCoroutine(endRoutine);
         endRoutine = StartCoroutine(EndRoutine(GameState.Victory, victoryDelay));
+        Time.timeScale = 0f;
 
     }
 
