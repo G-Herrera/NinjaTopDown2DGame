@@ -1,7 +1,22 @@
 using UnityEngine;
 
+/*
+ * <summary>
+ * Este script controla el comportamiento de la flecha disparada por el enemigo.
+ * </summary>
+ * - La flecha se mueve en una dirección específica a una velocidad determinada.
+ * - Tiene un tiempo de vida limitado, después del cual se destruye automáticamente.
+ * - Al colisionar con el jugador, inflige daño y se destruye.
+ */
+
 public class Arrow : MonoBehaviour
 {
+    /*
+     * <summary>
+     * Variables para configurar la velocidad, tiempo de vida y daño de la flecha.
+     * </summary>
+     */
+
     [SerializeField] private float speed = 6f;
     [SerializeField] private float lifeTime = 5f;
     [SerializeField] private int damage = 1;
@@ -12,6 +27,13 @@ public class Arrow : MonoBehaviour
     {
         Destroy(gameObject, lifeTime);
     }
+
+    /*
+     * <summary>
+     * Establece la dirección de movimiento de la flecha y ajusta su rotación visual.
+     * </summary>
+     * <param name="dir">Dirección en la que se moverá la flecha.</param>
+     */
 
     public void SetDirection(Vector2 dir)
     {

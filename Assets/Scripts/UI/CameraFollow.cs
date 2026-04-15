@@ -1,7 +1,20 @@
 using UnityEngine;
 
+/*
+ * <summary>
+ * Este script hace que la cámara siga al jugador de manera suave, manteniendo una distancia constante.
+ * </summary>
+ * - La cámara se mueve hacia la posición del jugador con un efecto de suavizado para evitar movimientos bruscos.
+ * - El offset inicial se calcula al inicio para mantener la perspectiva establecida en el Editor.
+ * - Se puede congelar el seguimiento de la cámara temporalmente mediante el método SetFrozen.
+ */
+
 public class CameraFollow : MonoBehaviour
 {
+    /* <summary>
+     * Variables para configurar el objetivo a seguir y la suavidad del movimiento.
+     * </summary>
+     */
     [Header("Targeting")]
     // El objeto que la cámara debe seguir (normalmente el Jugador)
     [SerializeField] private Transform target;
@@ -64,6 +77,11 @@ public class CameraFollow : MonoBehaviour
         );
     }
 
+    /* <summary>
+     * Método para congelar o descongelar el seguimiento de la cámara.
+     * </summary>
+     * <param name="frozen">Si es true, la cámara dejará de seguir al jugador; si es false, retomará el seguimiento.</param>
+     */
     public void SetFrozen(bool frozen)
     {
         isFrozen = frozen;
