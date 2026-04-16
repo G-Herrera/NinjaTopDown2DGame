@@ -19,9 +19,17 @@ public class PlayerHealth : MonoBehaviour
     [Tooltip("Tiempo para que se vea la animación de muerte antes de disparar GameOver")]
     [SerializeField] private float gameOverDelayAfterDeath = 0.8f;
 
+    [Header("Invulnerability")]
+    [Tooltip("Tiempo de invulnerabilidad después de recibir daño (opcional)")]
+    [SerializeField] private float invulnerabilityTime = 0.5f;
+    [SerializeField] private float blinkInterval = 0.1f; // Intervalo de parpadeo durante la invulnerabilidad
+
     private bool isDead;
     private float hurtLockTimer;
     private Coroutine deathRoutine;
+    private bool isInvulnerable;
+    private Coroutine invulnerabilityRoutine;
+    private SpriteRenderer spriteRenderer;
 
     private static readonly int HashHurt = Animator.StringToHash("hurt");
     private static readonly int HashIsDead = Animator.StringToHash("isDead");
@@ -34,6 +42,10 @@ public class PlayerHealth : MonoBehaviour
         // Auto-find animator in children (works if PlayerVisual holds Animator)
         if (animator == null)
             animator = GetComponentInChildren<Animator>(true);
+
+        // Auto-find sprite renderer in children (works if PlayerVisual holds SpriteRenderer)
+        if (spriteRenderer == null)
+            spriteRenderer = GetComponentInChildren<SpriteRenderer>(true);
     }
 
     private void Start()
@@ -58,6 +70,7 @@ public class PlayerHealth : MonoBehaviour
     public void TakeDamage(int amount)
     {
         if (isDead) return;
+        if (isInvulnerable) return;
         if (amount <= 0) return;
 
         currentHP -= amount;
@@ -72,6 +85,7 @@ public class PlayerHealth : MonoBehaviour
         }
 
         PlayHurtAnimation();
+        StartInvulnerability();
     }
 
     private void PlayHurtAnimation()
@@ -84,12 +98,29 @@ public class PlayerHealth : MonoBehaviour
             animator.SetTrigger(HashHurt);
     }
 
+    private void StartInvulnerability()
+    {
+        if (invulnerabilityRoutine != null)
+            StopCoroutine(invulnerabilityRoutine);
+        invulnerabilityRoutine = StartCoroutine(InvulnerabilityRoutine());
+    }
+
     private void Die()
     {
+        isInvulnerable = true;
         if (isDead) return;
         isDead = true;
 
         Debug.Log("[PlayerHealth] PLAYER DIED");
+
+        if (invulnerabilityRoutine != null)
+        {
+            StopCoroutine(invulnerabilityRoutine);
+            invulnerabilityRoutine = null;
+        }
+
+        if (spriteRenderer != null)
+            spriteRenderer.enabled = true; // Asegura que el sprite esté visible para la animación de muerte
 
         // Trigger death animation
         if (animator != null)
@@ -112,6 +143,24 @@ public class PlayerHealth : MonoBehaviour
             GameFlowManager.Instance.RequestGameOver();
         else
             Debug.LogWarning("[PlayerHealth] GameFlowManager.Instance is null. No GameOver was requested.");
+    }
+
+    private IEnumerator InvulnerabilityRoutine()
+    {
+        isInvulnerable = true;
+        float elapsed = 0f;
+        while (elapsed < invulnerabilityTime)
+        {
+            // Parpadeo del sprite para indicar invulnerabilidad
+            if (spriteRenderer != null)
+                spriteRenderer.enabled = !spriteRenderer.enabled;
+            yield return new WaitForSeconds(blinkInterval);
+            elapsed += blinkInterval;
+        }
+        // Asegura que el sprite esté visible al final
+        if (spriteRenderer != null)
+            spriteRenderer.enabled = true;
+        isInvulnerable = false;
     }
 
     private void UpdateUI()
