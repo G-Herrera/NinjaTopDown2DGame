@@ -49,7 +49,7 @@ public class PlayerStateManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Mouse.current.leftButton.wasPressedThisFrame)
         {
             Shoot();
         }
@@ -188,9 +188,14 @@ public class PlayerStateManager : MonoBehaviour
 
     private void Shoot()
     {
+        Vector2 direction = GetShootDirection();
+
         GameObject star = Instantiate(ninjaStartPrefab, firePoint.position, Quaternion.identity);
 
-        Vector2 direction = GetShootDirection();
+        //Rotación visual
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        star.transform.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+
         NinjaStar starScript = star.GetComponent<NinjaStar>();
 
         if (starScript != null)
@@ -201,12 +206,14 @@ public class PlayerStateManager : MonoBehaviour
 
     private Vector2 GetShootDirection()
     {
-        if (moveInput.sqrMagnitude > 0.01f)
-        {
-            return moveInput.normalized;
-        }
+        // Dirección hacia el mouse, convertida a coordenadas del mundo
+        Vector3 mouseScreenPos = Mouse.current.position.ReadValue();
+        // Para convertir a mundo, necesitamos la posición Z relativa a la cámara. Asumimos que el jugador y la cámara están en el mismo plano Z.
+        Vector3 mouseWorldPos = Camera.main.ScreenToWorldPoint(mouseScreenPos);
 
-        // Si no se mueve, dispara hacia donde mira (izq/der)
-        return spriteRenderer.flipX ? Vector2.left : Vector2.right;
+        Vector2 shootDir = (mouseWorldPos - transform.position).normalized;
+
+        return shootDir;
+
     }
 }

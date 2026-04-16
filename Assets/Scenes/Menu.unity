@@ -980,8 +980,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 41, y: -138}
-  m_SizeDelta: {x: 337.43018, y: 78.774414}
+  m_AnchoredPosition: {x: 32.149635, y: -261.33524}
+  m_SizeDelta: {x: 455.6306, y: 106.3685}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &630007858
 MonoBehaviour:
@@ -1209,7 +1209,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: BARRA ESPACIADORA para arrojar estrellas ninja
+  m_text: Usa el CLICK IZQUIERDO para arrojar estrellas ninja
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1871,7 +1871,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Sigue los caminos para teletransportare al otro lado del mapa y obtener
+  m_text: Sigue los caminos para teletransportarte al otro lado del mapa y obtener
     ventaja
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2469,8 +2469,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 41, y: -302}
-  m_SizeDelta: {x: 337.43018, y: 78.774414}
+  m_AnchoredPosition: {x: 51, y: -360.13}
+  m_SizeDelta: {x: 518.1415, y: 120.9622}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1567669697
 MonoBehaviour:
@@ -3323,7 +3323,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2118726783
 RectTransform:
   m_ObjectHideFlags: 0
