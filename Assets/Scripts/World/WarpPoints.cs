@@ -2,6 +2,11 @@ using UnityEngine;
 
 public class WarpPoints : MonoBehaviour
 {
+    [Header("Warp Settings")]
+    [SerializeField] private float warpCooldown = 2f;
+    [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private Color activeColor = Color.white;
+    [SerializeField] private Color inactiveColor = Color.gray;
     public Transform destination;
     public float exitOffset = 0.5f;
     private bool canWarp = true;
@@ -10,7 +15,9 @@ public class WarpPoints : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        if(spriteRenderer == null) spriteRenderer = GetComponent<SpriteRenderer>();
+
+           UpdateColor();
     }
 
     // Update is called once per frame
@@ -29,12 +36,17 @@ public class WarpPoints : MonoBehaviour
 
             if (destWarp != null)
             {
+                canWarp = false;
                 destWarp.canWarp = false;
+
+                UpdateColor();
+                destWarp.UpdateColor();
+
                 Vector3 offset = other.transform.up * exitOffset;
                 other.transform.position = destination.position + offset;
 
-                Invoke(nameof(ResetWarp), 0.2f);
-                destWarp.Invoke(nameof(ResetWarp), 0.2f);
+                Invoke(nameof(ResetWarp), warpCooldown);
+                destWarp.Invoke(nameof(ResetWarp), warpCooldown);
             }
         }
     }
@@ -42,5 +54,15 @@ public class WarpPoints : MonoBehaviour
     private void ResetWarp()
     {
         canWarp = true;
+            UpdateColor();
+    }
+
+    private void UpdateColor()
+    {
+        if (spriteRenderer != null)
+        {
+            spriteRenderer.color = canWarp ? activeColor : inactiveColor;
+        }
     }
 }
+

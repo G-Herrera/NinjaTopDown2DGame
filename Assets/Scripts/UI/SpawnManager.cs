@@ -25,6 +25,7 @@ public class SpawnManager : MonoBehaviour
     [Header("References")]
     [SerializeField] private GameObject m_Prefab;
     [SerializeField] private Transform[] m_SpawnPoints;
+    [SerializeField] private Transform playerTransform;
 
     [Header("Spawn Control")]
     [SerializeField] private int maxEnemies = 2;
@@ -83,11 +84,23 @@ public class SpawnManager : MonoBehaviour
         if (m_SpawnPoints.Length == 0)
         {
             Debug.LogWarning("No spawn points assigned");
-            return transform.position;
+            return Vector2.zero;
         }
 
-        int index = Random.Range(0, m_SpawnPoints.Length);
-        return m_SpawnPoints[index].position;
+        Transform farthestSpawn = m_SpawnPoints[0];
+        float maxDistance = 0f;
+
+        foreach (Transform spawnPoint in m_SpawnPoints)
+        {
+            float distance = Vector2.Distance(spawnPoint.position, playerTransform.position);
+            if (distance > maxDistance)
+            {
+                maxDistance = distance;
+                farthestSpawn = spawnPoint;
+            }
+        }
+
+        return farthestSpawn.position;
     }
 
     /* <summary>
