@@ -1,6 +1,8 @@
 using UnityEngine;
 using TMPro;
 using System.Runtime.CompilerServices;
+using System.Collections.Generic;
+using System.Collections;
 
 public class EnemyStateManager2D : MonoBehaviour
 {
@@ -32,6 +34,12 @@ public class EnemyStateManager2D : MonoBehaviour
     [SerializeField] private Animator animator;
     [SerializeField] private SpriteRenderer spriteRenderer;
 
+    [Header("Freeze")]
+    [SerializeField] private float freezeDurationOnHit = 2f;
+
+    private bool isFrozen;
+    private Coroutine freezeRoutine;
+
     private EnemyState currentState;
     private int currentWaypointIndex;
     private float attackTimer;
@@ -54,6 +62,8 @@ public class EnemyStateManager2D : MonoBehaviour
     // Update is called once per frame
     private void Update()
     {
+        if (isFrozen) return;
+
         switch (currentState) 
         {
             case EnemyState.Patrol:
@@ -163,5 +173,38 @@ public class EnemyStateManager2D : MonoBehaviour
         {
             spriteRenderer.flipX = true;
         }
+    }
+
+    public void Freeze()
+    {
+        if(isFrozen) return;
+
+        if (freezeRoutine != null)
+        {
+            StopCoroutine(freezeRoutine);
+        }
+    
+        freezeRoutine = StartCoroutine(FreezeCoroutine());
+    }
+
+    private IEnumerator FreezeCoroutine()
+    {
+        isFrozen = true;
+
+        if (spriteRenderer != null)
+        {
+            spriteRenderer.color = Color.blue; // Change color to indicate freeze
+        }
+
+        animator.speed = 0f;
+
+        yield return new WaitForSeconds(freezeDurationOnHit);
+
+        if (spriteRenderer != null)
+        {
+            spriteRenderer.color = Color.white; // Revert color
+        }
+        animator.speed = 1f;
+        isFrozen = false;
     }
 }

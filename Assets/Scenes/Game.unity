@@ -504,11 +504,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 5277714567513807757, guid: 8a4c572562f785e448619819d1f71717, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -6.603141
+      value: -5.88
       objectReference: {fileID: 0}
     - target: {fileID: 5277714567513807757, guid: 8a4c572562f785e448619819d1f71717, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -15.891516
+      value: -15.94
       objectReference: {fileID: 0}
     - target: {fileID: 5277714567513807757, guid: 8a4c572562f785e448619819d1f71717, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1519,6 +1519,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CameraFollow
   target: {fileID: 1888932993}
   smoothTime: 0.25
+  mapBounds: {fileID: 1473950943}
+  minBounds: {x: -17.23, y: -9.64}
+  maxBounds: {x: 17.18, y: 9.75}
 --- !u!1 &556800819
 GameObject:
   m_ObjectHideFlags: 0
@@ -3915,6 +3918,7 @@ MonoBehaviour:
   attackCooldown: 1.2
   animator: {fileID: 0}
   spriteRenderer: {fileID: 0}
+  freezeDurationOnHit: 2
 --- !u!95 &1046788164
 Animator:
   serializedVersion: 7
@@ -5006,7 +5010,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 2.0787, y: 0.7455, z: 0}
-  m_LocalScale: {x: 1.1199455, y: 0.9467262, z: 1}
+  m_LocalScale: {x: 1.1199455, y: 0.94672626, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 844638559}
@@ -6459,8 +6463,8 @@ MonoBehaviour:
   - {fileID: 398675715}
   - {fileID: 1556215112}
   playerTransform: {fileID: 1888932993}
-  maxEnemies: 5
-  spawnCooldown: 5
+  maxEnemies: 7
+  spawnCooldown: 3
 --- !u!4 &1676174323
 Transform:
   m_ObjectHideFlags: 0
@@ -7442,6 +7446,8 @@ MonoBehaviour:
   animator: {fileID: 1888932995}
   hurtLockTime: 0.2
   gameOverDelayAfterDeath: 0.8
+  invulnerabilityTime: 0.5
+  blinkInterval: 0.1
 --- !u!1001 &1899006663
 PrefabInstance:
   m_ObjectHideFlags: 0

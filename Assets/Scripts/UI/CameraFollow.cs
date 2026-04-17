@@ -26,10 +26,27 @@ public class CameraFollow : MonoBehaviour
     private Vector3 offset;
     private Vector3 currentVelocity = Vector3.zero; // Referencia interna para el cálculo de inercia
 
+    [Header("Bounds")]
+    [SerializeField] private SpriteRenderer mapBounds; // Sprite que define los límites del mapa (asignar en el Editor)
+    [SerializeField] private Vector2 minBounds; // Límite mínimo (esquina inferior izquierda)
+    [SerializeField] private Vector2 maxBounds; // Límite máximo (esquina superior derecha)
+
+    private Camera cam;
+    private float camHeight;
+    private float camWidth;
+
     private bool isFrozen = false;
 
     private void Start()
     {
+        Bounds bounds = mapBounds.bounds;
+        Debug.Log($"[CameraFollow] Map bounds calculated: Min {bounds.min}, Max {bounds.max}");
+
+        cam = GetComponent<Camera>();
+        // Calculamos el tamaño de la cámara en unidades del mundo para aplicar los límites correctamente
+        camHeight = cam.orthographicSize;
+        camWidth = camHeight * cam.aspect;
+
         // Calculamos la distancia inicial para mantener la perspectiva elegida en el Editor
         if (target != null)
             offset = transform.position - target.position;
@@ -57,6 +74,12 @@ public class CameraFollow : MonoBehaviour
 
         targetPos.z = transform.position.z;
 
+        // Aplicamos límites a la posición objetivo para que la cámara no muestre áreas fuera del mapa
+        float clampedX = Mathf.Clamp(targetPos.x, minBounds.x + camWidth, maxBounds.x - camWidth);
+        float clampedY = Mathf.Clamp(targetPos.y, minBounds.y + camHeight, maxBounds.y - camHeight);
+
+        Vector3 clampedPosition = new Vector3(clampedX, clampedY, targetPos.z);
+
         /*
          * En las propiedades del Rigidbody2D, interpolate debería estar en 'Interpolate' no en 'None'.
          * 1. La Física corre a una frecuencia fija (ej. 50Hz - FixedUpdate).
@@ -71,7 +94,7 @@ public class CameraFollow : MonoBehaviour
 
         transform.position = Vector3.SmoothDamp(
             transform.position,
-            targetPos,
+            clampedPosition,
             ref currentVelocity,
             smoothTime
         );
