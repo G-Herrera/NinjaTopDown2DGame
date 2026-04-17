@@ -12,6 +12,9 @@ public class CollectibleItem : MonoBehaviour
     [Header("Behaviour")]
     [SerializeField] private bool disableInsteadOfDestroy = true;
 
+    [Header("Audio")]
+    [SerializeField] private AudioClip collectClip;
+
     private bool alreadyCollected = false;
 
     private void Reset()
@@ -27,6 +30,8 @@ public class CollectibleItem : MonoBehaviour
         if (!other.CompareTag("Player")) return;
 
         alreadyCollected = true;
+
+        if (collectClip != null) AudioSource.PlayClipAtPoint(collectClip, transform.position, 1f);
 
         if (goalManager == null)
             goalManager = Object.FindFirstObjectByType<CollectibleGoalManager>();

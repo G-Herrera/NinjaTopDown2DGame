@@ -234,3 +234,4 @@ MonoBehaviour:
   value: 10
   goalManager: {fileID: 0}
   disableInsteadOfDestroy: 1
+  collectClip: {fileID: 8300000, guid: 6c970d75cb70fb740b9fb93252ae44d6, type: 3}

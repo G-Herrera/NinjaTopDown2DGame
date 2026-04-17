@@ -23,6 +23,10 @@ public class PlayerStateManager : MonoBehaviour
     [SerializeField] private GameObject ninjaStartPrefab;
     [SerializeField] private Transform firePoint;
 
+    [Header("Audio")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip shootClip;
+
     /*
      * También se usaba para la rotación vertical
      * [Header("Orientation")]
@@ -41,6 +45,7 @@ public class PlayerStateManager : MonoBehaviour
         rb.gravityScale = 0f;
         rb.freezeRotation = true;
 
+        if (audioSource == null) audioSource = GetComponent<AudioSource>();
         if (animator == null) animator = GetComponentInChildren<Animator>(true);
         if (spriteRenderer == null) spriteRenderer = GetComponentInChildren<SpriteRenderer>(true);
         if (playerHealth == null) playerHealth = GetComponent<PlayerHealth>();
@@ -201,6 +206,12 @@ public class PlayerStateManager : MonoBehaviour
         if (starScript != null)
         {
             starScript.SetDirection(direction);
+        }
+
+        if (audioSource != null && shootClip != null)
+        {
+            audioSource.pitch = Random.Range(0.9f, 1.1f);
+            audioSource.PlayOneShot(shootClip);
         }
     }
 

@@ -21,7 +21,21 @@ public class MenuManager : MonoBehaviour
 
     [SerializeField] private TextMeshProUGUI txtStateDebug;
 
+    [Header("Audio")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip startGameSound;
+
+    [Header("Start Delay")]
+    [SerializeField] private float startDelay = 1.98f;
+
+    private bool isStarting = false;
+
     private UIState currentState;//Estado actual de la interfaz de usuario. Se declara una variable privada para almacenar el estado actual de la UI.
+
+    private void Awake()
+    {
+        if (audioSource == null) audioSource = GetComponent<AudioSource>();
+    }
 
     private void Start()
     {
@@ -69,8 +83,10 @@ public class MenuManager : MonoBehaviour
 
     public void OnClickStart()
     {
-        // Se determina el orden de las escenas en el Build Settings, y se carga la escena de gameplay (index 1)
-        UnityEngine.SceneManagement.SceneManager.LoadScene(1);
+        if (isStarting) return;
+        isStarting = true;
+
+        StartCoroutine(StartGameRoutine());
     }
 
     public void OnClickOptions()
@@ -90,5 +106,20 @@ public class MenuManager : MonoBehaviour
 #else
             Application.Quit();
 #endif
+    }
+
+    private System.Collections.IEnumerator StartGameRoutine()
+    {
+        //Reproducir sonido
+        if (audioSource != null && startGameSound != null)
+        {
+            audioSource.PlayOneShot(startGameSound);
+        }
+
+        //Esperar
+        yield return new WaitForSeconds(startDelay);
+
+        //Cargar escena
+        SceneManager.LoadScene(1);
     }
 }

@@ -24,6 +24,10 @@ public class PlayerHealth : MonoBehaviour
     [SerializeField] private float invulnerabilityTime = 0.5f;
     [SerializeField] private float blinkInterval = 0.1f; // Intervalo de parpadeo durante la invulnerabilidad
 
+    [Header("Audio")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip hurtClip;
+
     private bool isDead;
     private float hurtLockTimer;
     private Coroutine deathRoutine;
@@ -39,6 +43,8 @@ public class PlayerHealth : MonoBehaviour
 
     private void Awake()
     {
+        if (audioSource == null) audioSource = GetComponent<AudioSource>();
+
         // Auto-find animator in children (works if PlayerVisual holds Animator)
         if (animator == null)
             animator = GetComponentInChildren<Animator>(true);
@@ -77,6 +83,13 @@ public class PlayerHealth : MonoBehaviour
         if (currentHP < 0) currentHP = 0;
 
         UpdateUI();
+
+        if (audioSource != null && hurtClip != null)
+        {
+            audioSource.pitch = Random.Range(0.9f, 1.1f); // Pequeña variación de pitch para evitar repetición
+            audioSource.PlayOneShot(hurtClip);
+        }
+            
 
         if (currentHP == 0)
         {

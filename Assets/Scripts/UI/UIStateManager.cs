@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.InputSystem;//Utilizado para la gestión de entradas y controles en Unity.
 using TMPro;//Utilizado para trabajar con textos en Unity.
+using System.Collections;
 
 public class UIStateManager : MonoBehaviour
 {
@@ -28,6 +29,12 @@ public class UIStateManager : MonoBehaviour
     [Header("debug")]
 
     [SerializeField] private TextMeshProUGUI txtStateDebug;
+
+    [Header("Audio")]
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip clipButtonStart;
+    [SerializeField] private float startDelay = 1.5f;
+
 
     private UIState currentState;//Estado actual de la interfaz de usuario. Se declara una variable privada para almacenar el estado actual de la UI.
 
@@ -127,8 +134,7 @@ public class UIStateManager : MonoBehaviour
 
     public void OnClickStart()
     {
-        ChangeState(UIState.Gameplay);
-        Time.timeScale = 1f;
+        StartCoroutine(StartGameAfterDelay());
     }
 
     public void OnClickOptions()
@@ -166,5 +172,16 @@ public class UIStateManager : MonoBehaviour
         #else
             Application.Quit();
         #endif
+    }
+
+    private IEnumerator StartGameAfterDelay()
+    {
+        if (audioSource != null && clipButtonStart != null)
+        {
+            audioSource.PlayOneShot(clipButtonStart);
+        }
+        yield return new WaitForSecondsRealtime(startDelay);
+        ChangeState(UIState.Gameplay);
+        Time.timeScale = 1f;
     }
 }
