@@ -15,6 +15,7 @@ public class CollectibleItem : MonoBehaviour
     [Header("Audio")]
     [SerializeField] private AudioClip collectClip;
 
+    private CollectibleSpawner spawner;
     private bool alreadyCollected = false;
 
     private void Reset()
@@ -22,6 +23,13 @@ public class CollectibleItem : MonoBehaviour
         // Unity llama Reset cuando agregas el componente por primera vez
         Collider2D c = GetComponent<Collider2D>();
         c.isTrigger = true;
+    }
+
+    private void Start()
+    {
+        if (goalManager == null)
+            goalManager = Object.FindFirstObjectByType<CollectibleGoalManager>();
+        spawner = Object.FindFirstObjectByType<CollectibleSpawner>();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -39,6 +47,7 @@ public class CollectibleItem : MonoBehaviour
         if (goalManager != null)
             goalManager.RegisterCollectible(value);
 
+        if (spawner != null) spawner.SpawnCollectible();
         if (disableInsteadOfDestroy) gameObject.SetActive(false);
         else Destroy(gameObject);
     }
