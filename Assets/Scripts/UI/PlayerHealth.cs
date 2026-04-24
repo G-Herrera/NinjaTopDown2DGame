@@ -34,6 +34,7 @@ public class PlayerHealth : MonoBehaviour
     private bool isInvulnerable;
     private Coroutine invulnerabilityRoutine;
     private SpriteRenderer spriteRenderer;
+    private ScoreManager scoreManager;
 
     private static readonly int HashHurt = Animator.StringToHash("hurt");
     private static readonly int HashIsDead = Animator.StringToHash("isDead");
@@ -52,6 +53,8 @@ public class PlayerHealth : MonoBehaviour
         // Auto-find sprite renderer in children (works if PlayerVisual holds SpriteRenderer)
         if (spriteRenderer == null)
             spriteRenderer = GetComponentInChildren<SpriteRenderer>(true);
+
+        scoreManager = FindFirstObjectByType<ScoreManager>();
     }
 
     private void Start()
@@ -79,8 +82,14 @@ public class PlayerHealth : MonoBehaviour
         if (isInvulnerable) return;
         if (amount <= 0) return;
 
+
         currentHP -= amount;
         if (currentHP < 0) currentHP = 0;
+
+        if (scoreManager != null)
+        {
+            scoreManager.AddScore(-50);
+        }
 
         UpdateUI();
 
@@ -90,7 +99,7 @@ public class PlayerHealth : MonoBehaviour
             audioSource.PlayOneShot(hurtClip);
         }
             
-
+            
         if (currentHP == 0)
         {
             Die();

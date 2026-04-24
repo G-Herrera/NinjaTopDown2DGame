@@ -36,6 +36,7 @@ public class EnemyStateManager2D : MonoBehaviour
 
     [Header("Freeze")]
     [SerializeField] private float freezeDurationOnHit = 2f;
+    [SerializeField] private int scoreValueOnFreeze = 50;
 
     private bool isFrozen;
     private Coroutine freezeRoutine;
@@ -44,6 +45,7 @@ public class EnemyStateManager2D : MonoBehaviour
     private int currentWaypointIndex;
     private float attackTimer;
     private PlayerHealth playerHealth;
+    private ScoreManager scoreManager;
 
 
 
@@ -55,6 +57,7 @@ public class EnemyStateManager2D : MonoBehaviour
         if(spriteRenderer == null) spriteRenderer = GetComponent<SpriteRenderer>();
 
         playerHealth = player.GetComponent<PlayerHealth>();
+        scoreManager = FindFirstObjectByType<ScoreManager>();
 
         ChangeState(EnemyState.Patrol);    
     }
@@ -178,6 +181,11 @@ public class EnemyStateManager2D : MonoBehaviour
     public void Freeze()
     {
         if(isFrozen) return;
+
+        if (scoreManager != null)
+        {
+            scoreManager.AddScore(50);
+        }
 
         if (freezeRoutine != null)
         {

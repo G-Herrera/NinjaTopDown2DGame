@@ -49,11 +49,13 @@ public class ChaserEnemy : MonoBehaviour
     [SerializeField] private float attackRange = 1.5f;
     [SerializeField] private float attackCooldown = 1f;
     [SerializeField] private int health = 3;
+    [SerializeField] private int scoreValue = 100;
 
     private EnemyState currentState;
     private float attackTimer;
     private PlayerHealth playerHealth;
     private SpawnManager spawnManager;
+    private ScoreManager scoreManager;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -68,6 +70,8 @@ public class ChaserEnemy : MonoBehaviour
             playerHealth = player.GetComponent<PlayerHealth>();
             ChangeState(EnemyState.Chase);
         }
+
+        scoreManager = FindFirstObjectByType<ScoreManager>();
     }
 
     // Update is called once per frame
@@ -167,7 +171,12 @@ public class ChaserEnemy : MonoBehaviour
         {
             ChangeState(EnemyState.Dead);
 
-            if(spawnManager != null)
+            if (scoreManager != null)
+            {
+                scoreManager.AddScore(scoreValue);
+            }
+
+            if (spawnManager != null)
             {
                 spawnManager.OnEnemyDeath();
             }

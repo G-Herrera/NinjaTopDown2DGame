@@ -5,7 +5,8 @@ public class ScoreManager : MonoBehaviour
 {
     [Header("UI")]
     [SerializeField] private TMP_Text scoreText;
-    
+    [SerializeField] private TMP_Text finalScoreText;
+
     [Header("Current Score")]    
     [SerializeField] private int score = 0;
 
@@ -41,9 +42,10 @@ public class ScoreManager : MonoBehaviour
 
     public void AddScore(int amount)
     {
-        if (amount <= 0) return;
-
         score += amount;
+
+        if (score < 0) score = 0;
+
         UpdateUI();
     }
 
@@ -67,6 +69,8 @@ public class ScoreManager : MonoBehaviour
     {
         if (scoreText != null)
             scoreText.text = $"{score}";
+        if (finalScoreText != null)
+            finalScoreText.text = $"{score}";
     }
 }
 

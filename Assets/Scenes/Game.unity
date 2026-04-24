@@ -149,8 +149,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScoreManager
   scoreText: {fileID: 1670748713}
+  finalScoreText: {fileID: 571348451}
   score: 0
-  survivalScorePerTick: 1
+  survivalScorePerTick: 25
   survivalTickInterval: 1
 --- !u!4 &22834409
 Transform:
@@ -4902,6 +4903,7 @@ MonoBehaviour:
   animator: {fileID: 0}
   spriteRenderer: {fileID: 0}
   freezeDurationOnHit: 2
+  scoreValueOnFreeze: 50
 --- !u!95 &1046788164
 Animator:
   serializedVersion: 7
@@ -6159,7 +6161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58b443302a91c347b06a54af269e71b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CollectibleGoalManager
-  collectiblesToWin: 2
+  collectiblesToWin: 10
   collected: 0
   objectiveText: {fileID: 705507904}
   scoreManager: {fileID: 22834408}
