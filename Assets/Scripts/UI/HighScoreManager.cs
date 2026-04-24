@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class HighScoreManager : MonoBehaviour
 {
-    public HighScoreManager instance;
+    public static HighScoreManager instance { get; private set; }
     public List<HighScoreEntry> highScores = new List<HighScoreEntry>();
 
     private const int MAX_HIGH_SCORES = 5;

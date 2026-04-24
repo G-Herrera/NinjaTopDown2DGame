@@ -7,7 +7,7 @@ using UnityEngine.SceneManagement;
 
 public class GameFlowManager : MonoBehaviour
 {
-    public enum GameState { Gameplay, GameOver, Victory, Paused}
+    public enum GameState { Gameplay, GameOver, Victory, Paused, HighScoreEntry}
 
     public static GameFlowManager Instance { get; private set; }
 
@@ -48,7 +48,6 @@ public class GameFlowManager : MonoBehaviour
     [SerializeField] private int healthBonusPerHP = 25;
 
     [Header("High Scores")]
-    [SerializeField] private HighScoreManager highScoreManager;
     [SerializeField] private GameObject highScoreInputPanel;
 
     private Coroutine endRoutine;
@@ -141,6 +140,8 @@ public class GameFlowManager : MonoBehaviour
         if (endState == GameState.GameOver) ShowPanels(gameOver: true);
         else ShowPanels(victory: true);
 
+        if (highScoreInputPanel != null) highScoreInputPanel.SetActive(false);
+
         EvaluateHighScore();
     }
 
@@ -190,34 +191,43 @@ public class GameFlowManager : MonoBehaviour
 
     private void EvaluateHighScore()
     {
-        if (highScoreManager == null || scoreManager == null) return;
+        if (HighScoreManager.instance == null || scoreManager == null) return;
 
-        int finalScore = scoreManager.GetScore() ;
-        if (highScoreManager.IsHighScore(finalScore))
+        int finalScore = scoreManager.GetScore();
+
+        if (HighScoreManager.instance.IsHighScore(finalScore))
         {
-            Debug.Log("¡Nuevo High Score! Puntuación final: " + finalScore);
-            
-            Time.timeScale = 0f; // Pausa el juego para que el jugador pueda ingresar su nombre sin presión de tiempo
-            if (highScoreInputPanel != null) highScoreInputPanel.SetActive(true);
-           /* HighScoreInput input = highScoreInputPanel.GetComponent<HighScoreInput>();
-            if (input != null)
-                input.SetFinalScore(finalScore);*/
+            Debug.Log("¡Nuevo High Score!");
+
+            if (highScoreInputPanel != null)
+            {
+                highScoreInputPanel.SetActive(true);
+            }
         }
     }
-    
-    public void SumbitHighScore(string playerName)
+
+    public void SubmitHighScore(string playerName)
     {
+        if (HighScoreManager.instance == null || scoreManager == null) return;
+
         int finalScore = scoreManager.GetScore();
         int currentHP = playerHealth != null ? playerHealth.CurrentHP : 0;
-
         float survivalTime = Time.timeSinceLevelLoad; // Tiempo total de supervivencia en segundos
+
         int enemiesKilled = FindFirstObjectByType<SpawnManager>()?.TotalEnemiesKilled ?? 0; // Asumiendo que SpawnManager tiene un contador de enemigos eliminados
 
-        highScoreManager.AddHighScore(new HighScoreEntry(playerName, finalScore, currentHP, survivalTime, enemiesKilled));
+        HighScoreEntry newEntry = new HighScoreEntry
+        {
+            playerName = playerName,
+            score = finalScore,
+            livesRemaining = currentHP,
+            timeSurvived = survivalTime,
+            enemiesKilled = enemiesKilled
+        };
 
-        if (highScoreManager == null || scoreManager == null) return;
-        int finalScore = scoreManager.GetScore();
-        highScoreManager.AddHighScore(playerName, finalScore);
+
+        HighScoreManager.instance.AddHighScore(newEntry);
+
         BackToMenu();
     }
 }

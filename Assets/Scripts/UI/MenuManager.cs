@@ -10,12 +10,14 @@ public class MenuManager : MonoBehaviour
     {
         MainMenu,
         Options,
+        HighScoreEntry
     }
 
     [Header("Paneles")]//Encabezado para organizar las variables en el inspector de Unity.
 
     [SerializeField] private GameObject panelMainMenu;//Panel del menú principal. Se declara una variable privada para el panel del menú principal.
     [SerializeField] private GameObject panelOptions;//Panel de opciones. Se declara una variable privada para el panel de opciones.
+    [SerializeField] private GameObject highScorePanel;//Panel de ingreso de puntuación alta. Se declara una variable privada para el panel de ingreso de puntuación alta.
 
     [Header("debug")]
 
@@ -52,7 +54,8 @@ public class MenuManager : MonoBehaviour
         // --------------------------
         if (panelMainMenu != null) panelMainMenu.SetActive(false);
         if (panelOptions != null) panelOptions.SetActive(false);
-       
+        if (highScorePanel != null) highScorePanel.SetActive(false);
+
         switch (currentState)
         {
             case UIState.MainMenu:
@@ -69,6 +72,13 @@ public class MenuManager : MonoBehaviour
                 {
                     panelOptions.SetActive(true);
                     panelOptions.transform.SetAsLastSibling();
+                }
+                break;
+            case UIState.HighScoreEntry:
+                if (highScorePanel != null)
+                {
+                    highScorePanel.SetActive(true);
+                    highScorePanel.transform.SetAsLastSibling();
                 }
                 break;
 
@@ -97,6 +107,11 @@ public class MenuManager : MonoBehaviour
     public void OnClickBackToMenu()
     {
         ChangeState(UIState.MainMenu);
+    }
+
+    public void OnClickHighScoreEntry()
+    {
+        ChangeState(UIState.HighScoreEntry);
     }
 
     public void OnClickExit()

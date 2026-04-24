@@ -12,7 +12,8 @@ public class UIStateManager : MonoBehaviour
         Options,
         Gameplay,
         Pause,
-        GameOver
+        GameOver,
+        HighScoreEntry
     }
 
     [Header("Paneles")]//Encabezado para organizar las variables en el inspector de Unity.
@@ -22,6 +23,7 @@ public class UIStateManager : MonoBehaviour
     [SerializeField] private GameObject panelHUD;//Panel de la interfaz de usuario durante el juego. Se declara una variable privada para el panel HUD.
     [SerializeField] private GameObject panelPause;//Panel de pausa. Se declara una variable privada para el panel de pausa. La sintaxis [SerializeField] permite que estas variables sean asignadas desde el editor de Unity.
     [SerializeField] private GameObject panelGameOver;//Panel de game over. Se declara una variable privada para el panel. 
+    [SerializeField] private GameObject panelHighScoreInput;//Panel de ingreso de puntuación alta. Se declara una variable privada para el panel de ingreso de puntuación alta.
 
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject enemy;
@@ -72,6 +74,7 @@ public class UIStateManager : MonoBehaviour
         if (panelHUD != null) panelHUD.SetActive(false);
         if (panelPause != null) panelPause.SetActive(false);
         if (panelGameOver != null) panelGameOver.SetActive(false);
+        if (panelHighScoreInput != null) panelHighScoreInput.SetActive(false);
 
         if (player != null) player.SetActive(false);
         if (enemy != null) enemy.SetActive(false);
@@ -121,6 +124,13 @@ public class UIStateManager : MonoBehaviour
                 {
                     panelGameOver.SetActive(true);
                     panelGameOver.transform.SetAsLastSibling();
+                }
+                break;
+            case UIState.HighScoreEntry:
+                if (panelHighScoreInput != null)
+                {
+                    panelHighScoreInput.SetActive(true);
+                    panelHighScoreInput.transform.SetAsLastSibling();
                 }
                 break;
         }

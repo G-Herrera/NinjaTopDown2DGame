@@ -33,6 +33,7 @@ public class SpawnManager : MonoBehaviour
 
     private float timer;
     private int currentEnemies;
+    public int TotalEnemiesKilled { get; private set; }
 
 
 
@@ -111,5 +112,6 @@ public class SpawnManager : MonoBehaviour
     public void OnEnemyDeath()
     {
         currentEnemies--;
+        TotalEnemiesKilled++;
     }
 }
