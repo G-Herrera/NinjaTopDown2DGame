@@ -17,6 +17,14 @@ public class ScoreManager : MonoBehaviour
     [Tooltip("Cada cuántos segundos se suman puntos por supervivencia")]
     [SerializeField] private float survivalTickInterval = 1.0f;
 
+    [Header("Popups")]
+    [Tooltip("Prefab de popup para mostrar puntos ganados o perdidos")]
+    [SerializeField] private GameObject scorePopupPrefab;
+    [Tooltip("Canvas donde se instanciarán los popups")]
+    [SerializeField] private Canvas uiCanvas; // Canvas donde se instanciarán los popups
+    [Tooltip("RectTransform del área donde se mostrarán los popups (opcional)")]
+    [SerializeField] private RectTransform scoreRect;
+
     private float survivalTimer = 0f;
 
     public int CurrentScore => score;
@@ -36,17 +44,18 @@ public class ScoreManager : MonoBehaviour
         if (survivalTimer >= survivalTickInterval)
         {
             survivalTimer -= survivalTickInterval;
-            AddScore(survivalScorePerTick);
+            AddScore(survivalScorePerTick, false);
         }
     }
 
-    public void AddScore(int amount)
+    public void AddScore(int amount, bool showPopup = true)
     {
         score += amount;
 
         if (score < 0) score = 0;
 
         UpdateUI();
+        if ( showPopup) SpawnPopup(amount);
     }
 
     public void AddVictoryBonus(int amount)
@@ -71,6 +80,22 @@ public class ScoreManager : MonoBehaviour
             scoreText.text = $"{score}";
         if (finalScoreText != null)
             finalScoreText.text = $"{score}";
+    }
+
+    private void SpawnPopup(int amount)
+    {
+        if (scorePopupPrefab == null || uiCanvas == null || scoreRect == null)  return;
+        // Instanciar el popup como hijo del canvas para que se posicione correctamente en la UI
+        GameObject popupInstance = Instantiate(scorePopupPrefab, uiCanvas.transform);
+
+        Vector3 worldPos = scoreRect.position;
+
+        Vector3 offset = new Vector3(Random.Range(-100, 100), Random.Range(-80, -20), 0); // Offset aleatorio para evitar superposición
+        popupInstance.transform.position = worldPos + offset;
+
+        ScorePopup popupScript = popupInstance.GetComponent<ScorePopup>();
+        if (popupScript != null)
+            popupScript.Setup(amount);
     }
 }
 

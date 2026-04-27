@@ -85,6 +85,7 @@ public class GameFlowManager : MonoBehaviour
     {
         if (!IsGameplay) return; // No pausar si ya morimos o ganamos
 
+        Cursor.visible = true; // Mostrar cursor al pausar
         SetState(GameState.Paused);
         Time.timeScale = 0f; // Congela el motor de física y tiempo
         ShowPanels(pause: true);
@@ -94,7 +95,7 @@ public class GameFlowManager : MonoBehaviour
     {
         // Solo podemos reanudar si estamos en Pausa u Opciones
         if (currentState != GameState.Paused && currentState != GameState.Gameplay) return;
-
+        Cursor.visible = false; // Ocultar cursor al reanudar
         SetState(GameState.Gameplay);
         Time.timeScale = 1f; // Devuelve el tiempo a la normalidad
         ShowPanels(gameplay: true);
@@ -102,6 +103,7 @@ public class GameFlowManager : MonoBehaviour
     public void RequestGameOver()
     {
         if (!IsGameplay) return;
+        Cursor.visible = true; // Mostrar cursor al morir
         if (endRoutine != null) StopCoroutine(endRoutine);
         endRoutine = StartCoroutine(EndRoutine(GameState.GameOver, gameOverDelay));
         Time.timeScale = 0f;
@@ -110,7 +112,7 @@ public class GameFlowManager : MonoBehaviour
     public void RequestVictory()
     {
         if (!IsGameplay) return;
-
+        Cursor.visible = true; // Mostrar cursor al ganar
         if (scoreManager != null)
         {
             scoreManager.AddVictoryBonus(victoryBonus);
@@ -186,6 +188,7 @@ public class GameFlowManager : MonoBehaviour
     public void BackToMenu()
     {
         Time.timeScale = 1f;
+        Cursor.visible = true; // Asegura que el cursor esté visible al volver al menú
         SceneManager.LoadScene(0); // Carga la escena con índice 0 (Menú)
     }
 

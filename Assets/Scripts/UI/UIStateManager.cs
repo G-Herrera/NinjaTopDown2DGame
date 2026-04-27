@@ -87,6 +87,7 @@ public class UIStateManager : MonoBehaviour
             case UIState.MainMenu:
                 if (panelMainMenu != null)
                 {
+                    Cursor.visible = true; // Muestra el cursor en el menú principal
                     panelMainMenu.SetActive(true);
                     // Asegura que el MainMenu quede al frente en la jerarquía para recibir clicks
                     panelMainMenu.transform.SetAsLastSibling();
@@ -96,6 +97,7 @@ public class UIStateManager : MonoBehaviour
             case UIState.Options:
                 if (panelOptions != null)
                 {
+                    Cursor.visible = true; // Muestra el cursor en opciones
                     panelOptions.SetActive(true);
                     panelOptions.transform.SetAsLastSibling();
                 }
@@ -104,6 +106,7 @@ public class UIStateManager : MonoBehaviour
             case UIState.Gameplay:
                 if (panelHUD != null)
                 {
+                    Cursor.visible = false; // Oculta el cursor durante el juego
                     panelHUD.SetActive(true);
                     panelHUD.transform.SetAsFirstSibling(); // HUD debajo de menús
                 }
@@ -114,6 +117,7 @@ public class UIStateManager : MonoBehaviour
             case UIState.Pause:
                 if (panelPause != null)
                 {
+                    Cursor.visible = true; // Muestra el cursor al pausar
                     panelPause.SetActive(true);
                     panelPause.transform.SetAsLastSibling();
                 }
@@ -122,6 +126,7 @@ public class UIStateManager : MonoBehaviour
             case UIState.GameOver:
                 if (panelGameOver != null)
                 {
+                    Cursor.visible = true; // Muestra el cursor en Game Over
                     panelGameOver.SetActive(true);
                     panelGameOver.transform.SetAsLastSibling();
                 }
@@ -129,6 +134,7 @@ public class UIStateManager : MonoBehaviour
             case UIState.HighScoreEntry:
                 if (panelHighScoreInput != null)
                 {
+                    Cursor.visible = true; // Muestra el cursor al ingresar puntuación alta
                     panelHighScoreInput.SetActive(true);
                     panelHighScoreInput.transform.SetAsLastSibling();
                 }
@@ -144,6 +150,7 @@ public class UIStateManager : MonoBehaviour
 
     public void OnClickStart()
     {
+        Cursor.visible = false; // Oculta el cursor al iniciar el juego
         StartCoroutine(StartGameAfterDelay());
     }
 
@@ -166,12 +173,14 @@ public class UIStateManager : MonoBehaviour
     public void OnClickPause()
     {
         ChangeState(UIState.Pause);
+        Cursor.visible = true; // Muestra el cursor al pausar
         Time.timeScale = 0f;
     }
 
     public void OnClickResume()
     {
         ChangeState(UIState.Gameplay);
+        Cursor.visible = false;
         Time.timeScale = 1f;
     }
 

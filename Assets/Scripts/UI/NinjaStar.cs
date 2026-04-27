@@ -47,18 +47,20 @@ public class NinjaStar : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D collision)
     {
         ChaserEnemy skeletonEnemy =collision.GetComponent<ChaserEnemy>();
-        EnemyStateManager2D ninjaEnemy = collision.GetComponent<EnemyStateManager2D>();
 
         if (skeletonEnemy != null)
         {
             skeletonEnemy.TakeDamage(damage);
             Destroy(gameObject);
+            return;
         }
+        EnemyStateManager2D ninjaEnemy = collision.GetComponent<EnemyStateManager2D>();
 
         if (ninjaEnemy != null)
         {
             ninjaEnemy.Freeze();
             Destroy(gameObject);
+            return;
         }
     }
 }

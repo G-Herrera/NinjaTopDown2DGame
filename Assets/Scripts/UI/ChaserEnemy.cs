@@ -56,6 +56,7 @@ public class ChaserEnemy : MonoBehaviour
     private PlayerHealth playerHealth;
     private SpawnManager spawnManager;
     private ScoreManager scoreManager;
+    private bool isDead = false;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -165,10 +166,14 @@ public class ChaserEnemy : MonoBehaviour
      */
     public void TakeDamage(int damage)
     {
+        if (isDead) return;
+
         health -= damage;
 
         if(health <= 0)
         {
+            isDead = true;
+
             ChangeState(EnemyState.Dead);
 
             if (scoreManager != null)
